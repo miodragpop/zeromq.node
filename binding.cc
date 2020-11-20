@@ -63,6 +63,14 @@
 using namespace v8;
 using namespace node;
 
+inline v8::Isolate *isol() {
+    return v8::Isolate::GetCurrent();
+}
+
+inline v8::Local<v8::Context> ctx() {
+    return v8::Isolate::GetCurrent()->GetCurrentContext();
+}
+
 enum {
     STATE_READY
   , STATE_BUSY
@@ -1295,8 +1303,8 @@ namespace zmq {
         }
       }
 
-      Local<Object> buf = batch->Get(i).As<Object>();
-      Local<Number> flagsObj = batch->Get(i + 1).As<Number>();
+      Local<Object> buf = batch->Get(ctx(), i).ToLocalChecked().As<Object>();
+      Local<Number> flagsObj = batch->Get(ctx(), i + 1).ToLocalChecked().As<Number>();
 
       int flags = Nan::To<int>(flagsObj).FromJust();
       size_t len = Buffer::Length(buf);
