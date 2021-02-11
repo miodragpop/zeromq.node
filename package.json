@@ -5,11 +5,11 @@
   "main": "index",
   "repository": {
     "type": "git",
-    "url": "http://github.com/JustinTulloss/zeromq.node.git"
+    "url": "https://github.com/miodragpop/zeromq.node.git"
   },
   "dependencies": {
-    "bindings": "~1.2.1",
-    "nan": "^2.4.0"
+    "bindings": "~1.5.0",
+    "nan": "^2.14.2"
   },
   "devDependencies": {
     "mocha": "^3.1.0",
@@ -22,7 +22,16 @@
   "scripts": {
     "test": "mocha --expose-gc --slow 300"
   },
-  "keywords": ["zeromq", "zmq", "0mq", "ømq", "libzmq", "native", "binding", "addon"],
+  "keywords": [
+    "zeromq",
+    "zmq",
+    "0mq",
+    "ømq",
+    "libzmq",
+    "native",
+    "binding",
+    "addon"
+  ],
   "license": "MIT",
   "author": "Justin Tulloss <justin.tulloss@gmail.com> (http://justin.harmonize.fm)",
   "contributors": [
